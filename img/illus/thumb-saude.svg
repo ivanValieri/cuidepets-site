@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2A4A63"/>
+      <stop offset="100%" stop-color="#1D3347"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#sky2)"/>
+
+  <!-- stars -->
+  <g fill="#F4D06F">
+    <circle cx="40" cy="60" r="3"/>
+    <circle cx="80" cy="40" r="2"/>
+    <circle cx="240" cy="70" r="3"/>
+    <circle cx="260" cy="120" r="2"/>
+    <circle cx="30" cy="140" r="2"/>
+  </g>
+
+  <!-- big heart -->
+  <path d="M150 100 c-24 -34 -80 -8 -54 34 c19 30 54 50 54 50 s35 -20 54 -50 c26 -42 -30 -68 -54 -34z" fill="#E1602A" opacity="0.9"/>
+
+  <!-- ground -->
+  <path d="M0 320 Q150 290 300 320 V400 H0 Z" fill="#16281D"/>
+
+  <!-- old dog silhouette, calm sitting -->
+  <g transform="translate(85,215)">
+    <ellipse cx="65" cy="140" rx="66" ry="55" fill="#EFE6D5"/>
+    <path d="M18 40 Q-8 66 8 112 Q30 126 44 96 Z" fill="#B98F5E"/>
+    <path d="M112 40 Q138 66 122 112 Q100 126 86 96 Z" fill="#B98F5E"/>
+    <circle cx="65" cy="86" r="62" fill="#EFE6D5"/>
+    <ellipse cx="65" cy="114" rx="30" ry="22" fill="#FFFFFF"/>
+    <ellipse cx="65" cy="106" rx="12" ry="9" fill="#3B2A20"/>
+    <path d="M38 74 Q45 65 52 74" stroke="#3B2A20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M78 74 Q85 65 92 74" stroke="#3B2A20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M52 122 Q65 130 78 122" stroke="#3B2A20" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- little grey muzzle patch for "senior" feel -->
+    <ellipse cx="65" cy="118" rx="22" ry="12" fill="#DCD3C0" opacity="0.7"/>
+  </g>
+</svg>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Gasto Mensal com o Pet | CuidePets</title>
+<meta name="description" content="Some ração, higiene, veterinário e outros custos para descobrir quanto você gasta (ou vai gastar) por mês com seu cão ou gato.">
+<link rel="canonical" href="https://www.cuidepets.com.br/ferramentas/gasto-mensal.html">
+<link rel="icon" type="image/png" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/favicon-180.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner container">
+    <a href="../index.html" class="brand"><img src="../img/logo-icon-transparent.png" alt="CuidePets" class="brand-logo">CuidePets</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="document.getElementById('main-nav').classList.toggle('open')">Menu</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html#ferramentas">Ferramentas</a>
+      <a href="../blog/index.html">Guias e Artigos</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+    <a href="../index.html#ferramentas" class="btn-explore">Explorar ferramentas</a>
+  </div>
+</header>
+
+<main class="tool-page container">
+  <div class="breadcrumb"><a href="../index.html">Ferramentas</a> / Gasto mensal</div>
+
+  <div class="tool-header">
+    <span class="section-label">Calculadora</span>
+    <h1>Quanto você gasta por mês com seu pet</h1>
+    <p class="lead" style="max-width:56ch;">Preencha os custos que se aplicam ao seu caso. Deixe em branco ou zero o que não usa — o total se ajusta automaticamente.</p>
+  </div>
+
+  <div class="tool-layout">
+    <div class="card">
+      <div class="field">
+        <label for="racao">Ração / alimentação (por mês)</label>
+        <input type="number" id="racao" min="0" step="1" value="150" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="higiene">Banho e tosa</label>
+        <input type="number" id="higiene" min="0" step="1" value="80" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="vet">Veterinário (média mensal, incluindo check-ups)</label>
+        <input type="number" id="vet" min="0" step="1" value="60" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="plano">Plano de saúde pet</label>
+        <input type="number" id="plano" min="0" step="1" value="0" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="petisco">Petiscos e brinquedos</label>
+        <input type="number" id="petisco" min="0" step="1" value="40" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="outros">Outros (creche, passeador, areia, etc.)</label>
+        <input type="number" id="outros" min="0" step="1" value="0" inputmode="decimal">
+      </div>
+
+      <button class="btn" onclick="calcular()">Calcular gasto mensal</button>
+    </div>
+
+    <div class="result-card">
+      <div class="stamp-panel" id="resultado">
+        <div class="result-label">Total estimado</div>
+        <div class="result-value" id="valor">—</div>
+        <p class="result-sub" id="subtexto">Preencha os campos e clique em calcular.</p>
+      </div>
+      <div class="result-notes">
+        <strong>Dica:</strong> reserve também uma "poupança pet" para emergências veterinárias — imprevistos costumam custar bem mais que a rotina.
+      </div>
+    </div>
+  </div>
+
+  <section class="related">
+    <span class="section-label">Outras ferramentas</span>
+    <div class="tool-grid">
+      <a href="quantidade-racao.html" class="tool-card">
+        <span class="icon">🥣</span>
+        <h3>Quantidade de ração ideal</h3>
+        <p>Calcule quanto ração dar por dia com base no peso do pet.</p>
+        <span class="go">Calcular agora →</span>
+      </a>
+      <a href="idade-do-pet.html" class="tool-card">
+        <span class="icon">🎂</span>
+        <h3>Idade do pet em anos humanos</h3>
+        <p>Descubra a idade real do seu pet considerando porte e espécie.</p>
+        <span class="go">Calcular agora →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 CuidePets. Todos os direitos reservados.</span>
+      <a href="../politica-de-privacidade.html">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function calcular() {
+  const ids = ['racao', 'higiene', 'vet', 'plano', 'petisco', 'outros'];
+  const total = ids.reduce((soma, id) => soma + (parseFloat(document.getElementById(id).value) || 0), 0);
+
+  const painel = document.getElementById('resultado');
+  const valor = document.getElementById('valor');
+  const subtexto = document.getElementById('subtexto');
+
+  painel.classList.remove('empty');
+  valor.textContent = 'R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  subtexto.textContent = 'Isso equivale a aproximadamente R$ ' + (total * 12).toLocaleString('pt-BR', {maximumFractionDigits: 0}) + ' por ano.';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0C48B"/>
+      <stop offset="100%" stop-color="#D98A4A"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#sky3)"/>
+  <circle cx="55" cy="70" r="40" fill="#FBE3C4" opacity="0.7"/>
+
+  <path d="M0 300 Q150 275 300 300 V400 H0 Z" fill="#8B4B23"/>
+  <path d="M0 320 Q150 300 300 320 V400 H0 Z" fill="#6E3A1A"/>
+
+  <!-- two bowls (transition symbolism) -->
+  <g transform="translate(40,270)">
+    <ellipse cx="40" cy="16" rx="42" ry="13" fill="#FFFFFF"/>
+    <path d="M-2 16 Q40 34 82 16 L78 30 Q40 44 2 30 Z" fill="#EFE6D5"/>
+  </g>
+  <g transform="translate(175,265)">
+    <ellipse cx="44" cy="18" rx="46" ry="14" fill="#24463B"/>
+    <path d="M-2 18 Q44 38 90 18 L86 34 Q44 50 2 34 Z" fill="#17302A"/>
+    <ellipse cx="44" cy="15" rx="34" ry="9" fill="#C9962B"/>
+  </g>
+
+  <!-- puppy -->
+  <g transform="translate(75,150)">
+    <ellipse cx="70" cy="140" rx="72" ry="58" fill="#F5EEDD"/>
+    <path d="M18 38 Q-10 66 8 110 Q32 124 46 92 Z" fill="#E1602A"/>
+    <path d="M122 38 Q150 66 132 110 Q108 124 94 92 Z" fill="#E1602A"/>
+    <circle cx="70" cy="84" r="62" fill="#F5EEDD"/>
+    <ellipse cx="70" cy="112" rx="30" ry="22" fill="#FFFFFF"/>
+    <ellipse cx="70" cy="104" rx="12" ry="9" fill="#3B2A20"/>
+    <circle cx="42" cy="72" r="7" fill="#3B2A20"/>
+    <circle cx="98" cy="72" r="7" fill="#3B2A20"/>
+    <path d="M55 120 Q70 130 85 120" stroke="#3B2A20" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="38" cy="52" rx="16" ry="20" fill="#E1602A" opacity="0.5"/>
+  </g>
+</svg>

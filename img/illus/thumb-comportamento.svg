@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8FC7BC"/>
+      <stop offset="100%" stop-color="#4C9985"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#sky1)"/>
+  <circle cx="235" cy="80" r="46" fill="#F4D06F" opacity="0.85"/>
+
+  <!-- grass -->
+  <path d="M0 300 Q75 270 150 300 T300 300 V400 H0 Z" fill="#2E6B54"/>
+  <path d="M0 320 Q75 295 150 320 T300 320 V400 H0 Z" fill="#255545"/>
+
+  <!-- grass blades -->
+  <g stroke="#1F4B3C" stroke-width="4" stroke-linecap="round">
+    <path d="M40 320 L36 300"/>
+    <path d="M55 322 L52 302"/>
+    <path d="M230 315 L227 296"/>
+    <path d="M255 318 L259 298"/>
+    <path d="M270 322 L266 302"/>
+  </g>
+
+  <!-- dog sitting -->
+  <g transform="translate(85,190)">
+    <ellipse cx="65" cy="150" rx="70" ry="60" fill="#F5EEDD"/>
+    <path d="M15 40 Q-15 70 5 120 Q30 135 45 100 Z" fill="#C98A4B"/>
+    <path d="M115 40 Q145 70 125 120 Q100 135 85 100 Z" fill="#C98A4B"/>
+    <circle cx="65" cy="90" r="66" fill="#F5EEDD"/>
+    <ellipse cx="65" cy="120" rx="32" ry="24" fill="#FFFFFF"/>
+    <ellipse cx="65" cy="112" rx="13" ry="10" fill="#3B2A20"/>
+    <path d="M35 76 Q43 66 51 76" stroke="#3B2A20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M79 76 Q87 66 95 76" stroke="#3B2A20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M52 130 Q65 140 78 130" stroke="#3B2A20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="35" cy="55" rx="18" ry="22" fill="#EAD9BE" opacity="0.6"/>
+  </g>
+</svg>

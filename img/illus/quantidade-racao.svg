@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#F7E4D6"/>
+  <circle cx="350" cy="60" r="36" fill="#F0D2BC"/>
+  <circle cx="30" cy="240" r="42" fill="#F0D2BC"/>
+
+  <!-- floor shadow -->
+  <ellipse cx="200" cy="245" rx="140" ry="18" fill="#E9C9AE"/>
+
+  <!-- bowl -->
+  <g transform="translate(120,180)">
+    <ellipse cx="80" cy="30" rx="82" ry="24" fill="#E1602A"/>
+    <path d="M-2 30 Q80 70 162 30 L155 55 Q80 82 5 55 Z" fill="#C24E1E"/>
+    <ellipse cx="80" cy="26" rx="64" ry="16" fill="#8B4B23"/>
+    <ellipse cx="80" cy="22" rx="54" ry="12" fill="#B5722F"/>
+    <circle cx="55" cy="20" r="4" fill="#8B4B23"/>
+    <circle cx="95" cy="18" r="4" fill="#8B4B23"/>
+    <circle cx="75" cy="24" r="4" fill="#8B4B23"/>
+  </g>
+
+  <!-- dog eating, head down -->
+  <g transform="translate(95,55)">
+    <path d="M55 20 Q20 30 30 78 Q50 92 62 66 Z" fill="#24463B"/>
+    <path d="M150 20 Q185 30 175 78 Q155 92 143 66 Z" fill="#24463B"/>
+    <ellipse cx="102" cy="80" rx="70" ry="60" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <ellipse cx="102" cy="118" rx="46" ry="36" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <ellipse cx="102" cy="128" rx="17" ry="12" fill="#1D3A33"/>
+    <path d="M70 62 Q78 52 86 62" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M118 62 Q126 52 134 62" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="65" cy="45" rx="16" ry="20" fill="#EAF3F0" opacity="0.7"/>
+  </g>
+
+  <!-- kibble bits -->
+  <g fill="#8B4B23">
+    <circle cx="260" cy="230" r="5"/>
+    <circle cx="278" cy="222" r="4"/>
+    <circle cx="248" cy="215" r="4"/>
+  </g>
+</svg>

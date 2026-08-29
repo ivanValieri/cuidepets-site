@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#E4EFE0"/>
+  <circle cx="345" cy="65" r="34" fill="#D3E5CC"/>
+  <circle cx="35" cy="235" r="40" fill="#D3E5CC"/>
+
+  <ellipse cx="190" cy="248" rx="130" ry="16" fill="#CBE0C3"/>
+
+  <!-- small bowl -->
+  <g transform="translate(230,190)">
+    <ellipse cx="46" cy="20" rx="48" ry="15" fill="#C9962B"/>
+    <path d="M-2 20 Q46 42 94 20 L90 34 Q46 50 2 34 Z" fill="#A67A1F"/>
+    <ellipse cx="46" cy="17" rx="36" ry="9" fill="#8B4B23"/>
+  </g>
+
+  <!-- cat sitting -->
+  <g transform="translate(75,60)">
+    <!-- tail -->
+    <path d="M170 150 Q210 140 200 100 Q195 80 178 90" stroke="#E1602A" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <!-- body -->
+    <ellipse cx="95" cy="150" rx="60" ry="46" fill="#FFFFFF" stroke="#E1602A" stroke-width="4"/>
+    <!-- ears -->
+    <path d="M45 55 L58 15 L82 62 Z" fill="#E1602A"/>
+    <path d="M145 55 L132 15 L108 62 Z" fill="#E1602A"/>
+    <path d="M53 52 L60 30 L74 56 Z" fill="#FBE3DA"/>
+    <path d="M137 52 L130 30 L116 56 Z" fill="#FBE3DA"/>
+    <!-- head -->
+    <circle cx="95" cy="85" r="62" fill="#FFFFFF" stroke="#E1602A" stroke-width="4"/>
+    <!-- face -->
+    <path d="M65 78 Q72 68 79 78" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M111 78 Q118 68 125 78" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M90 92 L100 92 L95 100 Z" fill="#24463B"/>
+    <path d="M95 100 Q88 108 78 104" stroke="#24463B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M95 100 Q102 108 112 104" stroke="#24463B" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <path d="M40 92 L14 88 M40 100 L12 100 M150 92 L176 88 M150 100 L178 100" stroke="#E1602A" stroke-width="3" stroke-linecap="round"/>
+    <!-- stripes -->
+    <path d="M60 45 L68 60 M130 45 L122 60 M95 32 L95 48" stroke="#E1602A" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- question mark bubble -->
+  <g transform="translate(255,50)">
+    <circle cx="40" cy="40" r="40" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <text x="40" y="55" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#24463B" text-anchor="middle">?</text>
+  </g>
+</svg>

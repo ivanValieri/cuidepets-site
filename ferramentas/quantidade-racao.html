@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Quantidade de Ração | CuidePets</title>
+<meta name="description" content="Descubra quantos gramas de ração dar por dia para o seu cão ou gato, com base no peso, fase de vida e nível de atividade.">
+<link rel="canonical" href="https://www.cuidepets.com.br/ferramentas/quantidade-racao.html">
+<link rel="icon" type="image/png" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/favicon-180.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner container">
+    <a href="../index.html" class="brand"><img src="../img/logo-icon-transparent.png" alt="CuidePets" class="brand-logo">CuidePets</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="document.getElementById('main-nav').classList.toggle('open')">Menu</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html#ferramentas">Ferramentas</a>
+      <a href="../blog/index.html">Guias e Artigos</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+    <a href="../index.html#ferramentas" class="btn-explore">Explorar ferramentas</a>
+  </div>
+</header>
+
+<main class="tool-page container">
+  <div class="breadcrumb"><a href="../index.html">Ferramentas</a> / Quantidade de ração</div>
+
+  <div class="tool-header">
+    <span class="section-label">Calculadora</span>
+    <h1>Quanto de ração dar por dia</h1>
+    <p class="lead" style="max-width:56ch;">A quantidade certa depende do peso, da fase de vida e do quanto seu pet se movimenta — não só da tabela impressa no pacote. Ajuste os campos abaixo para uma estimativa personalizada.</p>
+  </div>
+
+  <div class="tool-layout">
+    <div class="card">
+      <div class="field">
+        <label>Espécie</label>
+        <div class="chip-row">
+          <label class="chip active"><input type="radio" name="especie" value="cachorro" checked> 🐶 Cachorro</label>
+          <label class="chip"><input type="radio" name="especie" value="gato"> 🐱 Gato</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="peso">Peso atual (kg)</label>
+        <input type="number" id="peso" min="0.3" max="90" step="0.1" value="10" inputmode="decimal">
+      </div>
+
+      <div class="field">
+        <label>Fase de vida</label>
+        <select id="fase">
+          <option value="filhote">Filhote (crescimento)</option>
+          <option value="adulto" selected>Adulto</option>
+          <option value="idoso">Idoso (7+ anos)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Nível de atividade</label>
+        <select id="atividade">
+          <option value="baixa">Baixa — pouco exercício, tende a ganhar peso</option>
+          <option value="normal" selected>Normal — passeios regulares</option>
+          <option value="alta">Alta — muito ativo ou de trabalho</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="castrado">Situação</label>
+        <select id="castrado">
+          <option value="castrado" selected>Castrado(a)</option>
+          <option value="inteiro">Não castrado(a)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="kcal">Energia da ração (kcal por kg) <span class="hint" style="margin:0;">— opcional</span></label>
+        <input type="number" id="kcal" min="2500" max="5500" step="10" value="3600" inputmode="decimal">
+        <span class="hint">Está na embalagem da ração, na tabela nutricional. Se não souber, deixe o valor padrão (média do mercado).</span>
+      </div>
+
+      <button class="btn" onclick="calcular()">Calcular quantidade</button>
+    </div>
+
+    <div class="result-card">
+      <div class="stamp-panel" id="resultado">
+        <div class="result-label">Resultado</div>
+        <div class="result-value" id="valor">—</div>
+        <p class="result-sub" id="subtexto">Preencha os dados e clique em calcular.</p>
+      </div>
+      <div class="result-notes">
+        <strong>Como calculamos:</strong> estimamos a necessidade energética diária (NEM) a partir do peso e multiplicamos por um fator de acordo com fase de vida, atividade e castração — depois convertemos para gramas usando a densidade calórica da ração.
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-banner">
+    <strong>Aviso:</strong> esta calculadora oferece uma estimativa geral e não substitui orientação de um médico-veterinário, especialmente em casos de sobrepeso, doenças ou necessidades nutricionais específicas.
+  </div>
+
+  <section class="related">
+    <span class="section-label">Outras ferramentas</span>
+    <div class="tool-grid">
+      <a href="idade-do-pet.html" class="tool-card">
+        <span class="icon">🎂</span>
+        <h3>Idade do pet em anos humanos</h3>
+        <p>Descubra a idade real do seu pet considerando porte e espécie.</p>
+        <span class="go">Calcular agora →</span>
+      </a>
+      <a href="gasto-mensal.html" class="tool-card">
+        <span class="icon">💰</span>
+        <h3>Quanto gasto por mês com meu pet</h3>
+        <p>Some ração, higiene e veterinário para planejar o orçamento.</p>
+        <span class="go">Calcular agora →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 CuidePets. Todos os direitos reservados.</span>
+      <a href="../politica-de-privacidade.html">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('input[name="especie"]').forEach(r => {
+  r.addEventListener('change', () => {
+    document.querySelectorAll('.chip-row .chip').forEach(c => c.classList.remove('active'));
+    r.closest('.chip').classList.add('active');
+  });
+});
+
+function calcular() {
+  const peso = parseFloat(document.getElementById('peso').value);
+  const fase = document.getElementById('fase').value;
+  const atividade = document.getElementById('atividade').value;
+  const castrado = document.getElementById('castrado').value;
+  const kcalKg = parseFloat(document.getElementById('kcal').value) || 3600;
+  const painel = document.getElementById('resultado');
+  const valor = document.getElementById('valor');
+  const subtexto = document.getElementById('subtexto');
+
+  if (isNaN(peso) || peso <= 0) {
+    valor.textContent = '—';
+    subtexto.textContent = 'Informe um peso válido.';
+    return;
+  }
+
+  // Necessidade Energética em Repouso (RER)
+  const rer = 70 * Math.pow(peso, 0.75);
+
+  let fator;
+  if (fase === 'filhote') {
+    fator = 2.5;
+  } else if (fase === 'idoso') {
+    fator = castrado === 'castrado' ? 1.2 : 1.4;
+  } else {
+    fator = castrado === 'castrado' ? 1.4 : 1.6;
+  }
+
+  if (atividade === 'baixa') fator -= 0.2;
+  if (atividade === 'alta') fator += 0.3;
+  fator = Math.max(fator, 1);
+
+  const der = rer * fator; // kcal/dia
+  const gramas = Math.round((der / kcalKg) * 1000);
+
+  painel.classList.remove('empty');
+  valor.textContent = gramas + ' g/dia';
+  subtexto.textContent = 'Aproximadamente ' + Math.round(der) + ' kcal por dia. Divida em 2 a 3 refeições.';
+}
+</script>
+
+</body>
+</html>

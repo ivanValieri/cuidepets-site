@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#DCEAE6"/>
+  <!-- soft shapes -->
+  <circle cx="345" cy="55" r="34" fill="#C7DDD7"/>
+  <circle cx="40" cy="250" r="46" fill="#C7DDD7"/>
+
+  <!-- calendar -->
+  <g transform="translate(60,70)">
+    <rect x="0" y="14" width="92" height="88" rx="10" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <rect x="0" y="14" width="92" height="26" rx="10" fill="#24463B"/>
+    <rect x="16" y="0" width="8" height="24" rx="4" fill="#24463B"/>
+    <rect x="68" y="0" width="8" height="24" rx="4" fill="#24463B"/>
+    <circle cx="24" cy="66" r="6" fill="#E1602A"/>
+    <circle cx="46" cy="66" r="6" fill="#DCEAE6" stroke="#24463B" stroke-width="3"/>
+    <circle cx="68" cy="66" r="6" fill="#DCEAE6" stroke="#24463B" stroke-width="3"/>
+    <circle cx="24" cy="86" r="6" fill="#DCEAE6" stroke="#24463B" stroke-width="3"/>
+    <circle cx="46" cy="86" r="6" fill="#C9962B"/>
+    <circle cx="68" cy="86" r="6" fill="#DCEAE6" stroke="#24463B" stroke-width="3"/>
+  </g>
+
+  <!-- dog -->
+  <g transform="translate(175,55)">
+    <!-- ears -->
+    <path d="M40 40 Q0 60 15 115 Q40 130 55 95 Z" fill="#1D5F52"/>
+    <path d="M140 40 Q180 60 165 115 Q140 130 125 95 Z" fill="#1D5F52"/>
+    <!-- head -->
+    <ellipse cx="90" cy="95" rx="72" ry="66" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <!-- snout -->
+    <ellipse cx="90" cy="120" rx="34" ry="26" fill="#FFFFFF" stroke="#24463B" stroke-width="4"/>
+    <ellipse cx="90" cy="108" rx="15" ry="11" fill="#1D3A33"/>
+    <!-- eyes closed happy -->
+    <path d="M58 78 Q66 68 74 78" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M106 78 Q114 68 122 78" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- smile -->
+    <path d="M78 128 Q90 138 102 128" stroke="#24463B" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- spot -->
+    <ellipse cx="50" cy="60" rx="16" ry="20" fill="#DCEAE6" opacity="0.6"/>
+  </g>
+
+  <!-- little heart -->
+  <path d="M320 190 c-10 -14 -34 -3 -22 15 c8 12 22 20 22 20 s14 -8 22 -20 c12 -18 -12 -29 -22 -15z" fill="#E1602A"/>
+
+  <!-- sparkle -->
+  <g fill="#C9962B">
+    <circle cx="300" cy="240" r="4"/>
+    <circle cx="320" cy="255" r="3"/>
+    <circle cx="285" cy="260" r="3"/>
+  </g>
+</svg>

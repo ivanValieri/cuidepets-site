@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Idade do Pet em Anos Humanos | CuidePets</title>
+<meta name="description" content="Calcule a idade real do seu cão ou gato em anos humanos, considerando porte e espécie — mais preciso que a regra de multiplicar por 7.">
+<link rel="canonical" href="https://www.cuidepets.com.br/ferramentas/idade-do-pet.html">
+<link rel="icon" type="image/png" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/favicon-180.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner container">
+    <a href="../index.html" class="brand"><img src="../img/logo-icon-transparent.png" alt="CuidePets" class="brand-logo">CuidePets</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" onclick="document.getElementById('main-nav').classList.toggle('open')">Menu</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="../index.html#ferramentas">Ferramentas</a>
+      <a href="../blog/index.html">Guias e Artigos</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../contato.html">Contato</a>
+    </nav>
+    <a href="../index.html#ferramentas" class="btn-explore">Explorar ferramentas</a>
+  </div>
+</header>
+
+<main class="tool-page container">
+  <div class="breadcrumb"><a href="../index.html">Ferramentas</a> / Idade do pet</div>
+
+  <div class="tool-header">
+    <span class="section-label">Calculadora</span>
+    <h1>Idade do pet em anos humanos</h1>
+    <p class="lead" style="max-width:56ch;">A conta de "multiplicar por 7" é imprecisa. Cães e gatos amadurecem rápido nos primeiros anos e depois desaceleram — e o porte do cão muda bastante esse ritmo. Preencha os dados abaixo para um resultado mais próximo da realidade.</p>
+  </div>
+
+  <div class="tool-layout">
+    <div class="card">
+      <div class="field">
+        <label>Espécie</label>
+        <div class="chip-row">
+          <label class="chip active"><input type="radio" name="especie" value="cachorro" checked> 🐶 Cachorro</label>
+          <label class="chip"><input type="radio" name="especie" value="gato"> 🐱 Gato</label>
+        </div>
+      </div>
+
+      <div class="field" id="porte-field">
+        <label>Porte do cão (peso adulto estimado)</label>
+        <select id="porte">
+          <option value="pequeno">Pequeno — até 9 kg</option>
+          <option value="medio" selected>Médio — 10 a 22 kg</option>
+          <option value="grande">Grande — 23 a 40 kg</option>
+          <option value="gigante">Gigante — acima de 40 kg</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="idade">Idade atual do pet</label>
+        <input type="number" id="idade" min="0" max="30" step="0.5" value="3" inputmode="decimal">
+        <span class="hint">Em anos. Use casas decimais para meses (ex: 6 meses = 0.5)</span>
+      </div>
+
+      <button class="btn" onclick="calcular()">Calcular idade humana</button>
+    </div>
+
+    <div class="result-card">
+      <div class="stamp-panel" id="resultado">
+        <div class="result-label">Resultado</div>
+        <div class="result-value" id="valor">—</div>
+        <p class="result-sub" id="subtexto">Preencha os dados e clique em calcular.</p>
+      </div>
+      <div class="result-notes">
+        <strong>Como calculamos:</strong> usamos uma curva aproximada baseada em estudos veterinários (não linear): o primeiro ano de vida equivale a cerca de 15 anos humanos, o segundo soma mais ~9, e os anos seguintes variam por porte — cães maiores envelhecem mais rápido depois da fase adulta.
+      </div>
+    </div>
+  </div>
+
+  <div class="disclaimer-banner">
+    <strong>Aviso:</strong> este cálculo é uma estimativa educativa baseada em médias de estudos veterinários e não substitui uma avaliação profissional. Raça, genética e histórico de saúde também influenciam o envelhecimento do seu pet.
+  </div>
+
+  <section class="related">
+    <span class="section-label">Outras ferramentas</span>
+    <div class="tool-grid">
+      <a href="quantidade-racao.html" class="tool-card">
+        <span class="icon">🥣</span>
+        <h3>Quantidade de ração ideal</h3>
+        <p>Calcule quanto ração dar por dia com base no peso e na fase de vida.</p>
+        <span class="go">Calcular agora →</span>
+      </a>
+      <a href="alimentos-seguros.html" class="tool-card">
+        <span class="icon">🔎</span>
+        <h3>Alimento é seguro ou tóxico?</h3>
+        <p>Consulte se um alimento humano é seguro para cães e gatos.</p>
+        <span class="go">Consultar agora →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 CuidePets. Todos os direitos reservados.</span>
+      <a href="../politica-de-privacidade.html">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('input[name="especie"]').forEach(r => {
+  r.addEventListener('change', () => {
+    document.querySelectorAll('.chip-row .chip').forEach(c => c.classList.remove('active'));
+    r.closest('.chip').classList.add('active');
+    document.getElementById('porte-field').style.display = r.value === 'cachorro' ? 'block' : 'none';
+  });
+});
+
+function calcular() {
+  const especie = document.querySelector('input[name="especie"]:checked').value;
+  const porte = document.getElementById('porte').value;
+  const idade = parseFloat(document.getElementById('idade').value);
+  const painel = document.getElementById('resultado');
+  const valor = document.getElementById('valor');
+  const subtexto = document.getElementById('subtexto');
+
+  if (isNaN(idade) || idade < 0) {
+    valor.textContent = '—';
+    subtexto.textContent = 'Informe uma idade válida.';
+    return;
+  }
+
+  let humana;
+
+  if (especie === 'gato') {
+    if (idade <= 1) humana = idade * 15;
+    else if (idade <= 2) humana = 15 + (idade - 1) * 9;
+    else humana = 24 + (idade - 2) * 4;
+  } else {
+    const fatorPorte = { pequeno: 4, medio: 5, grande: 6.5, gigante: 8 }[porte];
+    if (idade <= 1) humana = idade * 15;
+    else if (idade <= 2) humana = 15 + (idade - 1) * 9;
+    else humana = 24 + (idade - 2) * fatorPorte;
+  }
+
+  humana = Math.round(humana * 10) / 10;
+
+  painel.classList.remove('empty');
+  valor.textContent = humana + ' anos';
+  subtexto.textContent = especie === 'gato'
+    ? 'Idade humana estimada para o seu gato.'
+    : 'Idade humana estimada, considerando o porte informado.';
+}
+</script>
+
+</body>
+</html>
